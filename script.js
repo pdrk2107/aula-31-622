@@ -7,32 +7,38 @@ mostrarMensagem();
 
 
 // 2. somaSimples
-function somaSimples() {
-    let numero1 = 4;
-    let numero2 = 6;
-
-    console.log(numero1 + numero2);
+function somaSimples(numero1, numero2) {
+    return numero1 + numero2;
 }
 
-somaSimples();
+let numero1 = Number(prompt("2 - Digite o primeiro número:"));
+let numero2 = Number(prompt("2 - Digite o segundo número:"));
+
+console.log("Soma:", somaSimples(numero1, numero2));
 
 
 // 3. imprimirNome
-function imprimirNome() {
-    let nome = "João";
-
-    console.log(nome);
+function imprimirNome(nome) {
+    console.log("Nome:", nome);
 }
 
-imprimirNome();
+let nome = prompt("3 - Digite seu nome:");
 
+imprimirNome(nome);
+
+
+// ==========================================
+// FUNÇÕES COM RETORNO
+// ==========================================
 
 // 4. quadrado
 function quadrado(numero) {
     return numero * numero;
 }
 
-console.log(quadrado(5));
+let numero3 = Number(prompt("4 - Digite um número:"));
+
+console.log("Quadrado:", quadrado(numero3));
 
 
 // 5. converterParaCelsius
@@ -40,7 +46,9 @@ function converterParaCelsius(fahrenheit) {
     return (fahrenheit - 32) * 5 / 9;
 }
 
-console.log(converterParaCelsius(86));
+let fahrenheit = Number(prompt("5 - Digite a temperatura em Fahrenheit:"));
+
+console.log("Temperatura em Celsius:", converterParaCelsius(fahrenheit));
 
 
 // 6. concatenaPalavras
@@ -48,15 +56,26 @@ function concatenaPalavras(palavra1, palavra2) {
     return palavra1 + " " + palavra2;
 }
 
-console.log(concatenaPalavras("Olá", "mundo"));
+let palavra1 = prompt("6 - Digite a primeira palavra:");
+let palavra2 = prompt("6 - Digite a segunda palavra:");
 
+console.log("Frase:", concatenaPalavras(palavra1, palavra2));
+
+
+// ==========================================
+// FUNÇÕES PARAMETRIZADAS
+// ==========================================
 
 // 7. calcularMedia
 function calcularMedia(nota1, nota2, nota3) {
     return (nota1 + nota2 + nota3) / 3;
 }
 
-console.log(calcularMedia(7, 8, 9));
+let nota1 = Number(prompt("7 - Digite a primeira nota:"));
+let nota2 = Number(prompt("7 - Digite a segunda nota:"));
+let nota3 = Number(prompt("7 - Digite a terceira nota:"));
+
+console.log("Média:", calcularMedia(nota1, nota2, nota3));
 
 
 // 8. desconto
@@ -64,49 +83,71 @@ function desconto(valor, percentual) {
     return valor - (valor * percentual / 100);
 }
 
-console.log(desconto(100, 20));
+let valor = Number(prompt("8 - Digite o valor do produto:"));
+let percentual = Number(prompt("8 - Digite o percentual de desconto:"));
+
+console.log("Valor final:", desconto(valor, percentual));
 
 
 // 9. saudacaoPersonalizada
 function saudacaoPersonalizada(nome) {
-    console.log("Olá, " + nome + "! Seja bem-vindo.");
+    console.log(`Olá, ${nome}! Seja bem-vindo.`);
 }
 
-saudacaoPersonalizada("Maria");
+let nome2 = prompt("9 - Digite seu nome:");
+
+saudacaoPersonalizada(nome2);
 
 
-// 10. função anônima multiplicar
+// ==========================================
+// FUNÇÕES ANÔNIMAS
+// ==========================================
+
+// 10. multiplicar
 const multiplicar = function(numero1, numero2) {
     return numero1 * numero2;
 };
 
-console.log(multiplicar(5, 4));
+let numero4 = Number(prompt("10 - Digite o primeiro número:"));
+let numero5 = Number(prompt("10 - Digite o segundo número:"));
+
+console.log("Multiplicação:", multiplicar(numero4, numero5));
 
 
-// 11. função anônima dividir
+// 11. dividir
 const dividir = function(numero1, numero2) {
     return numero1 / numero2;
 };
 
-console.log(dividir(10, 2));
+let numero6 = Number(prompt("11 - Digite o primeiro número:"));
+let numero7 = Number(prompt("11 - Digite o segundo número:"));
+
+console.log("Divisão:", dividir(numero6, numero7));
 
 
-// 12. arrow function dobro
-const dobro = (numero) => {
-    return numero * 2;
-};
+// ==========================================
+// ARROW FUNCTIONS
+// ==========================================
 
-console.log(dobro(7));
+// 12. dobro
+const dobro = numero => numero * 2;
+
+let numero8 = Number(prompt("12 - Digite um número:"));
+
+console.log("Dobro:", dobro(numero8));
 
 
-// 13. arrow function ehPar
-const ehPar = (numero) => {
-    return numero % 2 === 0;
-};
+// 13. ehPar
+const ehPar = numero => numero % 2 === 0;
 
-console.log(ehPar(10));
-console.log(ehPar(7));
+let numero9 = Number(prompt("13 - Digite um número:"));
 
+console.log("É par?", ehPar(numero9));
+
+
+// ==========================================
+// FUNÇÕES DENTRO DE FUNÇÕES
+// ==========================================
 
 // 14. calculadora
 function calculadora(numero1, numero2) {
@@ -123,7 +164,10 @@ function calculadora(numero1, numero2) {
     console.log("Subtração:", subtrair(numero1, numero2));
 }
 
-calculadora(10, 5);
+let numero10 = Number(prompt("14 - Digite o primeiro número:"));
+let numero11 = Number(prompt("14 - Digite o segundo número:"));
+
+calculadora(numero10, numero11);
 
 
 // 15. operacoesAvancadas
@@ -143,4 +187,10 @@ function operacoesAvancadas(numero1, numero2) {
     };
 }
 
-console.log(operacoesAvancadas(2, 3));
+let numero12 = Number(prompt("15 - Digite o primeiro número:"));
+let numero13 = Number(prompt("15 - Digite o segundo número:"));
+
+let resultado = operacoesAvancadas(numero12, numero13);
+
+console.log("Produto:", resultado.produto);
+console.log("Potência:", resultado.potencia);
