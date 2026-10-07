@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f8;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 900px;
+    max-width: 90%;
+    min-height: 550px;
+
+    background-color: white;
+    border-radius: 15px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.formulario {
+    padding: 40px;
+}
+
+.formulario h1 {
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.formulario > p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.campo label {
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: #333;
+}
+
+.campo input,
+.campo select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+    border-color: #4a6cf7;
+}
+
+.termos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.termos label {
+    color: #444;
+}
+
+#mensagem {
+    min-height: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.sucesso {
+    color: green;
+}
+
+.erro {
+    color: red;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #4a6cf7;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3556d4;
+}
+
+
+/* PAINEL DE SAÍDA */
+
+.saida {
+    background-color: #4a6cf7;
+    color: white;
+
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.saida h2 {
+    margin-bottom: 30px;
+}
+
+.resultado {
+    background-color: white;
+    color: #333;
+
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.resultado p {
+    margin-bottom: 18px;
+}
+
+.resultado p:last-child {
+    margin-bottom: 0;
+}
+
+.resultado strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #4a6cf7;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+
+    .container {
+        grid-template-columns: 1fr;
+        margin: 20px 0;
+    }
+
+    .saida {
+        padding: 30px;
+    }
+}
